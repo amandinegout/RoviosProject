@@ -1,0 +1,20 @@
+<launch>
+  
+  <node pkg="tracker" type="tracker" name="tracker" output="screen">
+		
+		<param name="default_mode" value="track" />
+		<param name="pantilt" value="/detect/PanTilts" />
+		<param name="command_camera" value="/cmd" />
+		<param name="state" value="/state" />
+  </node>
+  
+  <node pkg="sampler" type="sampler" name="sampler" output="screen">
+      
+        <param name="pantilt_topic" value="/detect/PanTilts" />
+        <param name="path_to_input" value="$(find sampler)/src/liste.txt" />
+        <param name="path_to_output" value="$(find sampler)/src/positions.txt" />
+        
+  </node>
+  
+  
+</launch>

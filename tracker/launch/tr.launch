@@ -1,0 +1,12 @@
+<launch>
+
+  <node pkg="tracker" type="tracker" name="tracker" output="screen">
+      launch-prefix="xterm -e gdb --args"
+      
+		<param name="default_mode" value="" />
+		<param name="pantilt" value="/detect/PanTilts" />
+		<param name="command_camera" value="/cmd" />
+		<param name="state" value="/state" />
+  </node>
+  
+</launch>

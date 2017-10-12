@@ -1,0 +1,12 @@
+<launch>
+ 
+ <node pkg="sampler" type="sampler" name="sampler" output="screen">
+      
+        <param name="pantilt_topic" value="/detect/PanTilts" />
+        <param name="path_to_input" value="$(find sampler)/src/liste.txt" />
+        <param name="path_to_output" value="$(find sampler)/src/positions.txt" />
+        
+  </node>
+
+  
+</launch>

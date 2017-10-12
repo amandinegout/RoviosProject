@@ -1,0 +1,10 @@
+<launch>
+
+  <node pkg="localize" type="localize" name="localize" output="screen">      
+		<param name="pantilts_topic" value="/detect/PanTilts" />
+		<param name="arenapositions_topic" value="/ArenaPositions" />
+		<param name="path_to_model_x" value="$(find localize)/src/x.pred" />
+		<param name="path_to_model_y" value="$(find localize)/src/y.pred" />
+  </node>
+  
+</launch>

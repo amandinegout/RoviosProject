@@ -1,0 +1,16 @@
+<launch>
+
+  <node pkg="nav_kalman" type="nav_kalman" name="nav_kalman" output="screen">
+  
+      <param name="max_angular_velocity" value="1.26" />
+      <param name="distance_min" value="0.5" />
+      <param name="k_vel" value="5.0" />
+      <param name="vel_max" value="1.0" />
+      <param name="k_alpha" value="0.1" />
+      
+      <remap from="/nav_kalman/nao_vel" to="/rovio/cmd_vel"/>
+      
+  
+  </node>
+  
+</launch>

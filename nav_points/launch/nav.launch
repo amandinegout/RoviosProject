@@ -1,0 +1,20 @@
+<launch>
+
+  <node pkg="nav_points" type="nav_points" name="nav_points" output="screen">
+  
+      <param name="max_angular_velocity" value="1.0" />
+      <param name="distance_min" value="0.5" />
+      <param name="k_vel" value="5.0" />
+      <param name="vel_max" value="0.5" />
+      <param name="k_alpha" value="0.1" />
+      <param name="TARGET_TF" value="base_link" />
+      <param name="SOURCE_TF" value="odom" />
+
+      <remap from="/nav_points/nao_vel" to="/rovio/cmd_vel"/>
+  </node>
+  
+  <node pkg="fake_odometry" type="fake_odometry_node.py" name="odom" output="screen">
+		<remap from="/odom/cmd_vel" to="/rovio/cmd_vel"/>
+  </node>
+  
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="share" type="share" name="share" output="screen">      
+		<param name="positions_topic" value="/ArenaPositions" />
+		<param name="hostname" value="calcul07" />
+		<param name="port_nb" value="10000" />
+		<param name="duration_time" value="50" />
+		<param name="persistance" value="0.5" />
+  </node>
+  
+</launch>

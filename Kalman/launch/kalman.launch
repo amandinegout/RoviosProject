@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="kalman" type="kalman_rovio.py" name="kalman_rovio" output="screen">
+      <param name="position_stddev_m" value="0.5" />
+  </node>
+
+  <node pkg="rqt_plot" type="rqt_plot" name="plot" output="screen"
+      args="/kalman_rovio/state/data[0],/kalman_rovio/state/data[1],/kalman_rovio/state/data[2],/kalman_rovio/measure/data[0],/kalman_rovio/measure/data[1]">
+  </node>
+
+</launch>

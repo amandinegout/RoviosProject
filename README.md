@@ -1,9 +1,12 @@
 # RoviosProject
-Machine Learning and Computer Vision project
+Machine Learning/Computer Vision/Robotics project
 
-This repository only contains the nodes students had to work on during the project.
+This project was completed with my co-worker Yann-Raphaël LIFCHITZ.
 
-The report allows understanding the function of the different nodes and what was the purpose of this project. Please note that the report is written in French.
+This repository only contains the ROS nodes students had to work on during the project.
+
+The report allows understanding how the nodes work and what was the purpose of this project. 
+Please note that the report is written in French.
 
 Goals :
 

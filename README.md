@@ -6,6 +6,7 @@ This repository only contains the nodes students had to work on during the proje
 The report allows understanding the function of the different nodes and what was the purpose of this project. Please note that the report is written in French.
 
 Goals :
+
 1- Open-loop control
 2- Rovios's Detection - Axis PTZ Camera
 3- Clustering of Rovios

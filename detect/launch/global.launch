@@ -1,0 +1,44 @@
+<launch>
+  
+  <node pkg="axis_camera" type="axis.py" name="axis" output="screen">
+      <param name="~hostname" value="axis1.smart.metz.supelec.fr" />
+      <param name="~username" value="bidon" />
+      <param name="~password" value="bidon" />
+  </node>
+  
+  <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view" output="screen">
+  </node>
+ 
+  <node pkg="axis_camera" type="axis_ptz.py" name="axis_ptz" output="screen">
+      
+      <param name="~queue_size" value="100"/>
+      <param name="~hostname" value="axis1.smart.metz.supelec.fr" />
+  </node>
+  
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" output="screen">
+  </node>
+  
+  <include file="$(find detect)/launch/det.launch">
+  </include>
+  
+  <node pkg="tracker" type="tracker" name="tracker" output="screen">
+		
+		<param name="default_mode" value="track" />
+		<param name="pantilt" value="/detect/PanTilts" />
+		<param name="command_camera" value="/cmd" />
+		<param name="state" value="/state" />
+  </node>
+  
+  <include file="$(find localize)/launch/loc.launch">
+  </include>
+  
+  <include file="$(find share)/launch/sha.launch">
+  </include>
+  
+  <include file="$(find positions)/launch/pos.launch">
+  </include>
+  
+  <include file="$(find gngt)/launch/gngt.launch">
+  </include>
+  
+</launch>

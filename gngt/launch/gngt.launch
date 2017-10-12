@@ -1,0 +1,16 @@
+<launch>
+
+<node pkg="gngt" type="input" name="input" output="screen">
+	<param name="nbSamples" value="20000" />
+	<param name="min_x" value="1.0" />
+	<param name="max_x" value="11.0" />
+	<param name="min_y" value="2.0" />
+	<param name="max_y" value="13.0" />
+	<param name="threshold" value="0.1" />
+	<remap from="/input/arenapositions_from_positions" to="/positions_from_server"/>
+</node>
+<node pkg="gngt" type="gngt" name="gngt" output="screen">
+	<remap from="/input" to="/input/input" />
+</node>
+
+</launch>
